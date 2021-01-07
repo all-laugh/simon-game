@@ -12,6 +12,14 @@ $(document).keypress( function() {
   }
 } );
 
+$(document).click( function() {
+  if ( !start ) {
+    start = true;
+    // $("h1").text("Level "+level);
+    setTimeout( nextSequence, 200 );
+  }
+} );
+
 function nextSequence() {
   level++;
   $("h1").text("Level "+level);
@@ -60,7 +68,7 @@ function isCorrect( curLevel ) {
     userPattern=[];
     level=0;
     setTimeout(function() {$("body").removeClass("game-over");}, 500 );
-    setTimeout( function() {$("h1").text("Press Any Key to Restart")}, 1000);
+    setTimeout( function() {$("h1").text("Press Any Key to Restart");}, 1000);
     start = false;
   }
 }
